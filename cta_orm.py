@@ -38,7 +38,7 @@ def list_passenger_payments():
         print("-" * 40)
 
 # Database setup
-engine = create_engine('postgresql://cta_admin:cta123@localhost/cta_db')
+engine = create_engine('postgresql://cta_admin:11111@localhost:5432/cta_db')
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 
