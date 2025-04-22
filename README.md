@@ -1,11 +1,17 @@
-# CTA-ORM-Project
 # CTA Database Project - Phase 3
+## ORM Implementation for Chicago Transit Authority System
 
-## ORM Implementation
-- **Class**: `PaymentTransaction` (1-N relationship with `Passenger`)
-- **Query**: `list_passenger_payments()` - Shows 10 most recent fare payments
+### Key Features
+- **Payment Tracking System**: Records fare transactions with timestamps
+- **1-N Relationship**: `Passenger` → `PaymentTransaction` mapping
+- **Query**: Last 10 payments with passenger balance info
 
-## How to Run
-1. Install dependencies:  
-   ```bash
-   pip install -r requirements.txt
+### ORM Structure
+```python
+class PaymentTransaction(Base):
+    __tablename__ = 'payment_transaction'
+    # Tracks: amount, payment method, timestamp
+    # Links to Passenger via foreign key
+
+def list_passenger_payments():
+    # Join query showing payment history
